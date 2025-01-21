@@ -15,4 +15,5 @@ json_path='/home/at8471/c2_sbi_experiments/hydrogen-sbi/scripts/settings.json'
 # Set up and do baseline run
 module purge                     # machine learning purposes 
 module load anaconda3/2021.11    # to manage software packages and environments 
+conda activate sbi_new 
 python3 setup_experiment.py "$json_path"
