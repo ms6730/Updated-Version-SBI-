@@ -26,7 +26,6 @@ This is the first script that you need to run. It is the baseline simulation tha
 
 
 #### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
-- Make sure to activate first the environment that you created to run `setup_experiment.py`
 - open your verdee terminal 
 - locate `setup_experiment.sh`
 - use this command `ls -l` to display detailed information about the files. It displays information about the permission as well ad about the type of the file  
@@ -35,5 +34,14 @@ This is the first script that you need to run. It is the baseline simulation tha
 - make sure that you are inside the directory where the setup_experiment.sh is uploaded 
 - write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
 
+#### Running ` setup_experiment.py` for comparative analysis
+This part has nothing to do with running the other scripts. It can be done after running all your scripts since it is related to a part in `analyse_ensembles.ipynb`
+To run it : 
+- Open ` new_press.json` 
+- Change the `base_dir` in the `new_press_json`
 
-  
+#### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
+- Open your verdee terminal 
+- Locate `setup_experiment.sh`
+- Write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
+
