@@ -15,9 +15,11 @@
 - `conda install pytorch pytorch-cuda=12.4 -c pytorch -c nvidia`
 - Verify the installation using `conda list` command
 
-### Run **`setup_experiment.py`**
-- Make sure to activate first the environment that you created to run `setup_experiment.py`
+### **`setup_experiment.py`**
+This is the first script that you need to run. It is the baseline simulation that will be considered as the truth. A baseline simulation refers to the initial simulation which uses assumed values for input parameters (e.g: Manning's coefficient, terrain slope ...). The baseline simulation involves one single run unlike ensemble simulation which involves multiple runs.
+
 #### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
+- Make sure to activate first the environment that you created to run `setup_experiment.py`
 - open your verdee terminal 
 - locate `setup_experiment.sh`
 - use this command `ls -l` to display detailed information about the files. It displays information about the permission as well ad about the type of the file  
