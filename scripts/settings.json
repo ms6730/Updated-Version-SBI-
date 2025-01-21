@@ -1,7 +1,7 @@
 {
     "base_dir": "/home/at8471/c2_sbi_experiments/sbi_framework",
     "runname": "sinnemahoning",
-    "huc": "02050202",
+    "huc": "02070001",
     "start": "2003-10-27",
     "end": "2003-12-01",
     "hours": 840,
