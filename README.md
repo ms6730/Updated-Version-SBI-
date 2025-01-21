@@ -18,6 +18,13 @@
 ### **`setup_experiment.py`**
 This is the first script that you need to run. It is the baseline simulation that will be considered as the truth. A baseline simulation refers to the initial simulation which uses assumed values for input parameters (e.g: Manning's coefficient, terrain slope ...). The baseline simulation involves one single run unlike ensemble simulation which involves multiple runs.
 
+### Modifications that needs to be done before running `setup_experiment.py`
+- Open `settings.JSON` file 
+- Basic directory in `settings.JSON` needs to be changed 
+- Open `setup_experiment.sh` 
+- change the `JSON PATH` and include the JSON path of `settings.JSON`
+
+
 #### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
 - Make sure to activate first the environment that you created to run `setup_experiment.py`
 - open your verdee terminal 
@@ -27,4 +34,6 @@ This is the first script that you need to run. It is the baseline simulation tha
 - use this command `ls -l` to display detailed information about the files and make sure that it has become executable
 - make sure that you are inside the directory where the setup_experiment.sh is uploaded 
 - write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
+
+
   
