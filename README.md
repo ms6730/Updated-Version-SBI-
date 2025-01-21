@@ -22,7 +22,7 @@ This is the first script that you need to run. It is the baseline simulation tha
 - Open `settings.JSON` file 
 - Basic directory in `settings.JSON` needs to be changed 
 - Open `setup_experiment.sh` 
-- change the `JSON PATH` and include the JSON path of `settings.JSON`
+- change the `JSON PATH` 
 
 
 #### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
