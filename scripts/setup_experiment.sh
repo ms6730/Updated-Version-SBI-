@@ -10,7 +10,8 @@
 #SBATCH --mail-type=begin        # send email when job begins
 #SBATCH --mail-type=end          # send email when job ends
 
-json_path='/home/at8471/c2_sbi_experiments/hydrogen-sbi/scripts/settings.json'
+json_path='/home/at8471/c2_sbi_experiments/hydrogen-sbi/scripts/settings.json' 
 
 # Set up and do baseline run
+module purge
 python3 setup_experiment.py "$json_path"
