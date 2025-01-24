@@ -28,7 +28,7 @@ This is the first script that you need to run. It is the baseline simulation tha
   - Change the `JSON PATH` 
   - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
 - Open `setup_experiment.py`:
- - Change the path in **line 15**
+  - Change the path in **line 15**
 
 
 #### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
