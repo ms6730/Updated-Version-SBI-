@@ -59,15 +59,15 @@ To run it :
 ### `create_ensemble.py`
 This is the second step that needs to be done after running `setup_experiment.py`
 #### Running `create_ensemble.py`, you need to run `create_ensemble.sh`
-- Open `create_ensemble.sh`
-- Change the path of the output
-- Change the path of the error
-- Change the mail user
-- Change the json path 
-- Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
-- Save your changes
-- Open your verdee terminal
-- Write on you terminal the following command: `sbatch create_ensemble.sh`
+- Open `create_ensemble.sh`:
+  - Change the path of the output
+  - Change the path of the error
+  - Change the mail user
+  - Change the json path 
+  - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
+  - Save your changes
+  - Open your verdee terminal
+  -  Write on you terminal the following command: `sbatch create_ensemble.sh`
 
 
 
