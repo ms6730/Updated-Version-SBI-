@@ -57,8 +57,10 @@ To run it :
   - Write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
 
 ### `create_ensemble.py`
-This is the second step that needs to be done after running `setup_experiment.py`
+This is the second step that needs to be done after running `setup_experiment.py`. This script is not running anything. It is just sample from the distribution, and pass them as new row. It is important to note that that it is just gets the original mamnning's map that we have  then it will go through.
+**Remark:**: Try to add `print` statment when you want to debug
 #### Running `create_ensemble.py`, you need to run `create_ensemble.sh`
+- Make sure that the **`ens`** in settings.json starts with 0 for the iteration. After the first iteration the `ens` variable will be increased automatically by 1 after evaluating the ensemble and getting the posterior 
 - Open `create_ensemble.sh`:
   - Change the path of the output
   - Change the path of the error
@@ -67,7 +69,7 @@ This is the second step that needs to be done after running `setup_experiment.py
   - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
   - Save your changes
   - Open your verdee terminal
-  -  Write on you terminal the following command: `sbatch create_ensemble.sh`
+  - Write on you terminal the following command: `sbatch create_ensemble.sh`
 
 
 
