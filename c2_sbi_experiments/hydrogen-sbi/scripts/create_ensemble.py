@@ -1,3 +1,4 @@
+import sys  # I added this library since I am using a function fram each package 
 import pickle
 import os
 import shutil
@@ -14,7 +15,8 @@ import random
 import torch
 
 #read in variables from the json file
-json_path = '/home/at8471/c2_sbi_experiments/hydrogen-sbi/scripts/settings.json' # This path needs to be changed
+json_path = sys.argv[1]                 # I decided to deal with a shell script and include the path of the json file in the shelll script instead and I dediced to run on a 1 node and 1 core since this script is not dealing with ParFlow 
+
 with open(json_path, 'r') as file:
     settings = json.load(file)
     
