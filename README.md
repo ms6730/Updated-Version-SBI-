@@ -48,7 +48,7 @@ To run it :
 
 #### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
 - Open `setup_experiment.sh`:
-  - change the json file to the **`new_press JSON file`** and modify the path
+  change the json file to the **`new_press JSON file`** and modify the path
 - Open your verdee terminal 
 - Locate `setup_experiment.sh`
 - Write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
