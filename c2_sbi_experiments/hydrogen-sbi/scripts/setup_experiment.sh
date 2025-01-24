@@ -11,7 +11,7 @@
 #SBATCH --mail-type=end          # send email when job ends
 #SBATCH --mail-user=ms6730@princeton.edu
 json_path='/home/at8471/c2_sbi_experiments/hydrogen-sbi/scripts/new_press.json'
-#json_path='/home/at8471/c2_sbi_experiments/hydrogen-sbi/scripts/settings.json'
+
 
 # Set up and do baseline run
 python3 setup_experiment.py "$json_path"
