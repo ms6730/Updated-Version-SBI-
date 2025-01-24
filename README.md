@@ -5,7 +5,7 @@
 - `conda --version`  to check the version of the conda   
 - `conda create -n sbi_env` to create new environment named sbi_env  
 -  `conda init bash` to ensure that the conda command is available in your terminal without requiring you to manually source Conda's activation script  
-- Close terminal and open new terminal to refresh it  
+- Close the terminal and open new terminal to refresh it  
 - `conda activate sbi_env` to activate the new environment created
 - Save `requirement.txt` in your working directory
 - Install all dependencies specified in `requirement.txt` file using `pip install -r requirements.txt`
@@ -52,9 +52,9 @@ To run it :
 - Open `setup_experiment.sh`:
   - Change the json file to the **`new_press JSON file`** and modify the path
   - Save your changes 
-- Open your verdee terminal 
-- Locate `setup_experiment.sh`
-- Write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
+- Open your verdee terminal:
+  - Locate `setup_experiment.sh`
+  - Write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
 
 ### `create_ensemble.py`
 This is the second step that needs to be done after running `setup_experiment.py`
