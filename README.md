@@ -22,13 +22,13 @@ This is the first script that you need to run. It is the baseline simulation tha
 - Open `settings.JSON` file 
 - Basic directory in `settings.JSON` needs to be changed 
 - Open `setup_experiment.sh`:
-- - Change the path of the output
-- - Change the path of the error
-- - Change the mail user
-- - Change the `JSON PATH` 
-- - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
+ - Change the path of the output
+ -  Change the path of the error
+ - Change the mail user
+ - Change the `JSON PATH` 
+ - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
 - Open `setup_experiment.py`:
-- - Change the path in **line 15**
+ - Change the path in **line 15**
 
 
 #### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
