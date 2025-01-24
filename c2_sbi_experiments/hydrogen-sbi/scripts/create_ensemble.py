@@ -14,7 +14,7 @@ import random
 import torch
 
 #read in variables from the json file
-json_path = '/home/at8471/c2_sbi_experiments/hydrogen-sbi/scripts/settings.json' #probably need a better way to do this step
+json_path = '/home/at8471/c2_sbi_experiments/hydrogen-sbi/scripts/settings.json' # This path needs to be changed
 with open(json_path, 'r') as file:
     settings = json.load(file)
     
