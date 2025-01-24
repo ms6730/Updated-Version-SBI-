@@ -20,15 +20,18 @@ This is the first script that you need to run. It is the baseline simulation tha
 
 ### Modifications that needs to be done before running `setup_experiment.py`
 - Open `settings.JSON` file 
-- Basic directory in `settings.JSON` needs to be changed 
+  - Basic directory in `settings.JSON` needs to be changed 
+  -  Save your changes 
 - Open `setup_experiment.sh`:
   - Change the path of the output
-  -  Change the path of the error
+  - Change the path of the error
   - Change the mail user
   - Change the `JSON PATH` 
   - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
+  - Save your changes
 - Open `setup_experiment.py`:
   - Change the path in **line 15**
+  - Save your changes
 
 
 #### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
@@ -45,13 +48,16 @@ This part has nothing to do with running the other scripts. It can be done after
 To run it : 
 - Open ` new_press.json` 
 - Change the `base_dir` in the `new_press_json`
+- Save your changes
 - Open `setup_experiment.sh`:
-  change the json file to the **`new_press JSON file`** and modify the path
+  - Change the json file to the **`new_press JSON file`** and modify the path
+  - Save your changes 
 - Open your verdee terminal 
 - Locate `setup_experiment.sh`
 - Write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
 
 ### `create_ensemble.py`
+This is the second step that needs to be done after running `setup_experiment.py`
 #### Running `create_ensemble.py`, you need to run `create_ensemble.sh`
 - Open `create_ensemble.sh`
 - Change the path of the output
@@ -59,5 +65,9 @@ To run it :
 - Change the mail user
 - Change the json path 
 - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
+- Save your changes
+- Open your verdee terminal
+- Write on you terminal the following command: `sbatch create_ensemble.sh`
+
 
 
