@@ -21,10 +21,14 @@ This is the first script that you need to run. It is the baseline simulation tha
 ### Modifications that needs to be done before running `setup_experiment.py`
 - Open `settings.JSON` file 
 - Basic directory in `settings.JSON` needs to be changed 
-- Open `setup_experiment.sh` 
-- change the `JSON PATH` 
-- Open `setup_experiment.py`
-- Change the path in **line 15**
+- Open `setup_experiment.sh`:
+- - Change the path of the output
+- - Change the path of the error
+- - Change the mail user
+- - Change the `JSON PATH` 
+- - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
+- Open `setup_experiment.py`:
+- - Change the path in **line 15**
 
 
 #### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
@@ -46,4 +50,13 @@ To run it :
 - Open your verdee terminal 
 - Locate `setup_experiment.sh`
 - Write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
+
+### Running `create_ensemble.py`, you need to run `create_ensemble.sh`
+- Open `create_ensemble.sh`
+- Change the path of the output
+- Change the path of the error
+- Change the mail user
+- Change the json path 
+- Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
+
 
