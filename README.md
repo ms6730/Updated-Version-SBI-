@@ -47,11 +47,13 @@ To run it :
 - Change the `base_dir` in the `new_press_json`
 
 #### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
+- Open `setup_experiment.sh`:
+  - change the json file to the **`new_press JSON file`** and modify the path
 - Open your verdee terminal 
 - Locate `setup_experiment.sh`
 - Write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
 
-### Running `create_ensemble.py`, you need to run `create_ensemble.sh`
+#### Running `create_ensemble.py`, you need to run `create_ensemble.sh`
 - Open `create_ensemble.sh`
 - Change the path of the output
 - Change the path of the error
