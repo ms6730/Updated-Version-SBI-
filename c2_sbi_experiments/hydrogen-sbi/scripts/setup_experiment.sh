@@ -12,8 +12,8 @@
 #SBATCH --mail-user=ms6730@princeton.edu
 json_path='/home/at8471/c2_sbi_experiments/hydrogen-sbi/scripts/new_press.json'
 module purge # machine learning 
-
-
+module load anaconda3/2021.11 # environment version 
+conda activate sbi_new  # activate the environment
 # Set up and do baseline run
 python3 setup_experiment.py "$json_path"
 
