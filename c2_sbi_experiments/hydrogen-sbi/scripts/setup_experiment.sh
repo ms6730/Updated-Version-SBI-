@@ -11,6 +11,7 @@
 #SBATCH --mail-type=end          # send email when job ends
 #SBATCH --mail-user=ms6730@princeton.edu
 json_path='/home/at8471/c2_sbi_experiments/hydrogen-sbi/scripts/new_press.json'
+module purge # machine learning 
 
 
 # Set up and do baseline run
