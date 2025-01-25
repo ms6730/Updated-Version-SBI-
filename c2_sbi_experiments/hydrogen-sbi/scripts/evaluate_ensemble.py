@@ -1,4 +1,5 @@
 import os
+import sys      # I added this library, since I am using one of its function for the json path
 import pickle
 import numpy as np
 import pandas as pd
@@ -12,7 +13,7 @@ import random
 import matplotlib.pyplot as plt
 
 #read in variables from the json file
-json_path = '/home/at8471/c2_sbi_experiments/hydrogen-sbi/scripts/settings.json' #probably need a better way to do this step
+json_path = sys.argv[1]                 # I decided to use this function to get the json path needed for this script
 with open(json_path, 'r') as file:
     settings = json.load(file)
     
@@ -77,18 +78,24 @@ for i in range(0,num_sims):
     sim_df = sim_df[5:]#dropping first 5 days from evaluation for spinup
     if i == 0:
         obsv_df = pd.read_csv(obsv_path).drop('date', axis=1)
-        #obsv_df = obsv_df.dropna(axis=1)#don't need to do this when using simulated data
         obsv_df = obsv_df[5:]#dropping first 5 days
         common_columns = sim_df.columns.intersection(obsv_df.columns)
         obsv_df = obsv_df[common_columns]
         obsv_tensor = torch.tensor(obsv_df.values, dtype=torch.float)
         obsv_flat = torch.flatten(obsv_tensor)
-        x_obs = torch.reshape(obsv_flat, (1, obsv_flat.numel()))
+        x_obs = obsv_flat.unsqueeze(0)               # this function has been used since it is more simpler 
 
     sim_df = sim_df[common_columns]
     sim_tensor = torch.tensor(sim_df.values, dtype=torch.float)
     sim_flat = torch.flatten(sim_tensor)
-    sim_flat += torch.randn(sim_flat.shape) * (sim_flat * noise_param)
+    current_noise_param = noise_param[i]        # there is bugs here in this part of the code 
+                                                # after checking the noise_parameters values from the csv files and assessing the size of 
+                                                # the noise parameters which consists of 100 values where one value of noise per simulation
+                                                # to be able to determine the noise parameter value for this current simulation, we were able to
+                                                # access it using `i` which represents the data for the current simulation 
+                                                # the error that was before adding this is mismatcg in sizes where the size of the simulated                                                        # data is around 2160 and the size of the noise parameters were 100 which corresponds to the
+                                                # total number of simulations 
+    sim_flat += torch.randn(sim_flat.shape) * (sim_flat * current_noise_param)  # this line has been also modified
     sim_data.append(sim_flat)
 
 x_sim = torch.stack(sim_data, dim=0)
@@ -98,8 +105,13 @@ _ = inference.append_simulations(theta_sim, x_sim).train(force_first_round_loss=
 posterior = inference.build_posterior().set_default_x(x_obs)
 
 #make plots from sampling the proposal 
+plots_dir = f'{base_dir}/plots'                      # I added these two lines to make the code more flexible, since in my case I did not have this                                                      # folder and it let to an error when executing the code 
+os.makedirs(plots_dir, exist_ok=True)                # this line is to ensure that the folder exists and in case it does not exist, it will create 
+                                                     # the directory 
 samples = posterior.sample((1000,))
-num_params = samples.shape[1]
+num_params = filtered_df.shape[1]                    # this line has been modified where the num_params should be equal to filtered_df.shape[1]
+                                                     # instead of samples.shape[1] since the samples that does comes from the theta_sim file
+                                                     # have one addtional column which is for the noise_parameter 
 for i in range(num_params):
     plt.figure(figsize=(8, 6))
     plt.hist(samples[:, i].numpy(), bins=30, density=True, alpha=0.6, color='b')
