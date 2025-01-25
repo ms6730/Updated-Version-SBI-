@@ -103,8 +103,11 @@ This is the third step that needs to be done after running `create_ensemble.py`.
 ### ` evaluate_ensemble.py`
 This is the fourth step that needs to be done after running `run_ensemble.py`. This script is responsible for executing the posterior distribution and generating the density of the 10,000 samples.
 **Remark:** Try to add `print` statment when you want to debug
-#### Running `run_ensemble.py`, you need to run `run_ensemble.sh`
-- Open `run_ensemble.sh`:
+#### Running `evaluate_ensemble.py`, you need to run `evaluate_ensemble.sh`
+- Open `settings.JSON` file :
+  - Add the `observation path` since it is needed for this script, noting that we are considering that thetrue value is the simulated date from the baseline run. 
+    The observation path should have the following shape: "/home/ms6730/c2_experiment_sin/sbi_framework/outputs/sinnemahoning/streamflow_daily_pfsim.csv". You can get it from teh outputs of the second step which is the baseline run.
+- Open `evaluate_ensemble.sh`:
   - Change the path of the output
   - Change the path of the error
   - Change the mail user
@@ -121,6 +124,14 @@ This script has nothing to do with running the other scripts. However,  it is us
 
 ### `analyze_ensemble.ipynb`
 This script has nothing to do with running the other scripts. However, it is used to analyze the posterior after running SBI, which is done in the `evaluate_ensemble.py`script. By using this script, you can evaluate the posterior and determine whether you need to repeat steps 2, 3, and 4 to generate a new posterior and move closer to the true values, which, in our case, are derived from the baseline run of PARFLOW. It is the key point that tells you whether you still need to iterate or not.
+#### Modifications that needs to be done before running 'analyze_ensemble.ipynb`
+- Open `analyze_ensemble.ipynb`:
+  - Change `json_path` path
+  - Change `filtered_df` path
+  - Change `file_dir` path
+  - Change `file_name` path
+  - Save your changes
+  - run the ipynb script
 
 
 
