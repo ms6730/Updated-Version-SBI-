@@ -71,9 +71,10 @@ This is the second step that needs to be done after running `setup_experiment.py
   - Open your verdee terminal
   - Write on you terminal the following command: `sbatch create_ensemble.sh`
 
-### ` run_ensemble.py`, you need to run `run_ensemble.sh`
+### ` run_ensemble.py`
 This is the third step that needs to be done after running `create_ensemble.py`. This script executes multiple simulation runs for the ensemble created when running `create_ensemble.py`.
 **Remark:** Try to add `print` statment when you want to debug
+#### Running `run_ensemble.py`, you need to run `run_ensemble.sh`
 - Open `run_ensemble.sh`:
   - Change the path of the output
   - Change the path of the error
