@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=ensemble
+#SBATCH --job-name=evaluate_ensemble
 #SBATCH --output=/home/ms6730/c2_sbi_experiments_new/sbi_framework/%x_%j.out
 #SBATCH --error=/home/ms6730/c2_sbi_experiments_new/sbi_framework/%x_%j.err
 #SBATCH --nodes=1                # node count
@@ -20,4 +20,4 @@ module purge
 module load anaconda3/2021.11
 conda activate sbi_new
 # Run your Python script
-python3 create_ensemble.py "$task_id" "$json_path"
+python3 evaluate_ensemble.py "$task_id" "$json_path"
