@@ -18,7 +18,7 @@
 
 ### **`setup_experiment.py`**
 This is the first script that you need to run. It is the baseline simulation that will be considered as the truth. A baseline simulation refers to the initial simulation which uses assumed values for input parameters (e.g: Manning's coefficient, terrain slope ...). The baseline simulation involves one single run unlike ensemble simulation which involves multiple runs.
-### Modifications that needs to be done before running `setup_experiment.sh`
+#### Modifications that needs to be done before running `setup_experiment.sh`
 - Open `settings.JSON` file 
   - Basic directory in `settings.JSON` needs to be changed 
   -  Save your changes 
@@ -57,7 +57,7 @@ To run it :
 ### `create_ensemble.py`
 This is the second step that needs to be done after running `setup_experiment.py`. This script is not running anything. It is just sample from the distribution, and pass them as new row. It is important to note that that it is just gets the original mamnning's map that we have then it will go through.    
 **Remark:** Try to add `print` statment when you want to debug
-### Modifications that needs to be done before running `create_ensemble.py`
+#### Modifications that needs to be done before running `create_ensemble.py`
 - Open `setup_experiment.sh`:
   - Change the path of the output
   - Change the path of the error
@@ -80,7 +80,7 @@ This is the second step that needs to be done after running `setup_experiment.py
 ### ` run_ensemble.py`
 This is the third step that needs to be done after running `create_ensemble.py`. This script executes multiple simulation runs for the ensemble created when running `create_ensemble.py`.
 **Remark:** Try to add `print` statment when you want to debug
-### Modifications that needs to be done before running `run_ensemble.py`
+#### Modifications that needs to be done before running `run_ensemble.py`
 - Open `run_ensemble.sh`:
   - Change the path of the output
   - Change the path of the error
