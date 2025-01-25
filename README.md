@@ -105,7 +105,7 @@ This is the fourth step that needs to be done after running `run_ensemble.py`. T
 **Remark:** Try to add `print` statment when you want to debug
 #### Running `evaluate_ensemble.py`, you need to run `evaluate_ensemble.sh`
 - Open `settings.JSON` file :
-  - Add the `observation path` since it is needed for this script, noting that we are considering that thetrue value is the simulated date from the baseline run. 
+  - Add the `observation path` since it is needed for this script, noting that we are considering that the true value is the simulated date from the baseline run. 
     The observation path should have the following shape: "/home/ms6730/c2_experiment_sin/sbi_framework/outputs/sinnemahoning/streamflow_daily_pfsim.csv". You can get it from teh outputs of the second step which is the baseline run.
 - Open `evaluate_ensemble.sh`:
   - Change the path of the output
