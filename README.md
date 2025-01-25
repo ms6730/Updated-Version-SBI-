@@ -114,6 +114,9 @@ This is the fourth step that needs to be done after running `run_ensemble.py`. T
   - Open your verdee terminal
   - Write on you terminal the following command: `sbatch evaluate_ensemble.sh`
 
+### `pf_ens_functions.py`
+
+
 
 
 
