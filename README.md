@@ -15,10 +15,10 @@
 - `conda install pytorch pytorch-cuda=12.4 -c pytorch -c nvidia`
 - Verify the installation using `conda list` command
 
+
 ### **`setup_experiment.py`**
 This is the first script that you need to run. It is the baseline simulation that will be considered as the truth. A baseline simulation refers to the initial simulation which uses assumed values for input parameters (e.g: Manning's coefficient, terrain slope ...). The baseline simulation involves one single run unlike ensemble simulation which involves multiple runs.
-
-### Modifications that needs to be done before running `setup_experiment.py`
+### Modifications that needs to be done before running `setup_experiment.sh`
 - Open `settings.JSON` file 
   - Basic directory in `settings.JSON` needs to be changed 
   -  Save your changes 
@@ -32,8 +32,6 @@ This is the first script that you need to run. It is the baseline simulation tha
 - Open `setup_experiment.py`:
   - Change the path in **line 15**
   - Save your changes
-
-
 #### To run `setup_experiment.py`, you need to run ` setup_experiment.sh`
 - open your verdee terminal 
   - locate `setup_experiment.sh`
@@ -42,7 +40,6 @@ This is the first script that you need to run. It is the baseline simulation tha
   - use this command `ls -l` to display detailed information about the files and make sure that it has become executable
   - make sure that you are inside the directory where the setup_experiment.sh is uploaded 
   - write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
-
 #### Running ` setup_experiment.py` for comparative analysis
 This part has nothing to do with running the other scripts. It can be done after running all your scripts since it is related to a part in `analyse_ensembles.ipynb`
 To run it : 
@@ -56,11 +53,19 @@ To run it :
   - Locate `setup_experiment.sh`
   - Write `sbatch setup_experiment.sh` on your terminal to start by the execution of the script
 
+
 ### `create_ensemble.py`
 This is the second step that needs to be done after running `setup_experiment.py`. This script is not running anything. It is just sample from the distribution, and pass them as new row. It is important to note that that it is just gets the original mamnning's map that we have then it will go through.    
 **Remark:** Try to add `print` statment when you want to debug
-#### Running `create_ensemble.py`, you need to run `create_ensemble.sh`
-- Make sure that the **`ens`** in settings.json starts with 0 for the first iteration. After the first iteration, the `ens` variable will be increased automatically by 1 after evaluating the ensemble and getting the posterior
+### Modifications that needs to be done before running `create_ensemble.py`
+- Open `setup_experiment.sh`:
+  - Change the path of the output
+  - Change the path of the error
+  - Change the mail user
+  - Change the `JSON PATH` 
+  - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
+  - Save your changes
+#### To run `create_ensemble.py`, you need to run `create_ensemble.sh`
 - Open `create_ensemble.sh`:
   - Change the path of the output
   - Change the path of the error
@@ -71,8 +76,32 @@ This is the second step that needs to be done after running `setup_experiment.py
   - Open your verdee terminal
   - Write on you terminal the following command: `sbatch create_ensemble.sh`
 
+
 ### ` run_ensemble.py`
 This is the third step that needs to be done after running `create_ensemble.py`. This script executes multiple simulation runs for the ensemble created when running `create_ensemble.py`.
+**Remark:** Try to add `print` statment when you want to debug
+### Modifications that needs to be done before running `run_ensemble.py`
+- Open `run_ensemble.sh`:
+  - Change the path of the output
+  - Change the path of the error
+  - Change the mail user
+  - Change the `JSON PATH` 
+  - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
+  - Save your changes
+#### Running `run_ensemble.py`, you need to run `run_ensemble.sh`
+- Open `run_ensemble.sh`:
+  - Change the path of the output
+  - Change the path of the error
+  - Change the mail user
+  - Change the json path 
+  - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
+  - Save your changes
+  - Open your verdee terminal
+  - Write on you terminal the following command: `sbatch run_ensemble.sh`
+
+
+### ` evaluate_ensemble.py`
+This is the fourth step that needs to be done after running `run_ensemble.py`. This script is responsible for executing the posterior distribution and generating the density of the 10,000 samples.
 **Remark:** Try to add `print` statment when you want to debug
 #### Running `run_ensemble.py`, you need to run `run_ensemble.sh`
 - Open `run_ensemble.sh`:
@@ -84,6 +113,10 @@ This is the third step that needs to be done after running `create_ensemble.py`.
   - Save your changes
   - Open your verdee terminal
   - Write on you terminal the following command: `sbatch run_ensemble.sh`
+
+
+
+
 
 
 
