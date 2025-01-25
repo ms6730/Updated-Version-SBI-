@@ -112,7 +112,7 @@ This is the fourth step that needs to be done after running `run_ensemble.py`. T
   - Change the name of the environment in `conda activate sbi_new` , include the name of the environment that you created to run this project 
   - Save your changes
   - Open your verdee terminal
-  - Write on you terminal the following command: `sbatch run_ensemble.sh`
+  - Write on you terminal the following command: `sbatch evaluate_ensemble.sh`
 
 
 
