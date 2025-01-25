@@ -116,10 +116,13 @@ This is the fourth step that needs to be done after running `run_ensemble.py`. T
 
 
 ### `pf_ens_functions.py`
-This script has nothing to do with running script. It used to provide functions that will be used in the other scripts. 
+This script has nothing to do with running the other scripts. However,  it is used to provide functions that will be used in the other scripts. 
 
 
 ### `analyze_ensemble.ipynb`
+This script has nothing to do with running the other scripts. However, it is used to analyze the posterior after running SBI, which is done in the `evaluate_ensemble.py`script. By using this script, you can evaluate the posterior and determine whether you need to repeat steps 2, 3, and 4 to generate a new posterior and move closer to the true values, which, in our case, are derived from the baseline run of PARFLOW. It is the key point that tells you whether you still need to iterate or not.
+
+
 
 
 
