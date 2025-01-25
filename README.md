@@ -131,7 +131,7 @@ This script has nothing to do with running the other scripts. However, it is use
   - Change `file_dir` path
   - Change `file_name` path
   - Save your changes
-  - run the ipynb script
+- run the ipynb script
 
 
 
